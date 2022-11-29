@@ -1,13 +1,141 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  --clr-primary-1: #2b1f00;
+  --clr-primary-2: #6f4f00;
+  --clr-primary-10: #f1f0ec;
+  --clr-gray-1: #121212;
+  --clr-gray-3: #595959;
+  --clr-gray-5: #808080;
+
+  --max-width: 400px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  color: var(--clr-primary-1);
+  background-color: var(--clr-primary-10);
+  font-size: 1rem;
+}
+
+pre {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  text-align: left;
+}
+
+header {
+  display: flex;
+  flex-flow: column;
+  row-gap: 0.75rem;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  row-gap: 1.75rem;
+  margin: 0 3rem;
+  max-width: var(--max-width);
+}
+
+h1 span {
+  background-size: 100% 8%;
+  background-image: linear-gradient(90deg, #f7ff00, #db36a4);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+li {
+  list-style: none;
+}
+
+#projects a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin: 11px;
+  border-radius: 50%;
+  background-color: #808080;
+}
+
+.wip::after {
+  content: "WIP";
+  margin-left: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--clr-gray-5);
+}
+#projects a {
+  color: var(--clr-gray-1);
+}
+
+#projects p {
+  margin-left: 1.75rem;
+  color: var(--clr-gray-3);
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  color: var(--clr-gray-5);
+  margin-bottom: 0.3rem;
+  padding: 2px;
+  width: fit-content;
+}
+
+a span {
+  margin-top: 2px;
+  border-bottom: #999999 2px solid;
+}
+
+a span:hover {
+  border-bottom: 2px solid rgba(18, 18, 18, 0);
+}
+
+img {
+  width: 1.25rem;
+  margin: 0.25rem;
+}
+
+footer {
+  margin: 5rem 0 2.5rem;
+  color: var(--clr-gray-5);
 }
