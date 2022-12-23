@@ -1,8 +1,9 @@
 import React from "react";
-import { socmeds } from "./socmeds";
-import { projects } from "./projects";
+import { socmeds } from "./data/socmeds";
+import { projects } from "./data/projects";
+import { Outlet, Link } from "react-router-dom";
 
-function App() {
+function Home() {
   return (
     <main>
       <header>
@@ -37,10 +38,7 @@ function App() {
         <h2>Socials</h2>
         <Socials />
       </section>
-      <footer>
-        Copyright © 2022 Luis Escarrilla. All Rights Reserved. This website
-        doesn't use cookies.
-      </footer>
+      <Outlet />
     </main>
   );
 }
@@ -50,9 +48,9 @@ const Projects = () => {
     const { id, title, description, link } = project;
     return (
       <li key={id}>
-        <a href={link} target="_blank" rel="noreferrer">
+        <Link to={link} className="bullet">
           <span>{title}</span>
-        </a>
+        </Link>
         <p>{description}</p>
       </li>
     );
@@ -70,4 +68,4 @@ const Socials = () => {
   });
 };
 
-export default App;
+export default Home;
