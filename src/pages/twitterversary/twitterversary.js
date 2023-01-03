@@ -6,7 +6,7 @@ forms.forEach((item, i) => {
   item.id = i + 1;
 });
 
-function TwtAnniv() {
+function Twitterversary() {
   const [state, setState] = useState({
     title: "",
     heading: "",
@@ -34,7 +34,6 @@ function TwtAnniv() {
           <Forms
             state={state}
             setState={setState}
-            generatedLink={generatedLink}
             setGeneratedLink={setGeneratedLink}
           />
         </form>
@@ -74,12 +73,12 @@ function TwtAnniv() {
 const Forms = (props) => {
   return forms.map((input) => {
     const { label, name, placeholder, value } = input;
-    const { state, setState, generatedLink, setGeneratedLink } = props;
-    const handleChange = (evt) => {
-      const value = evt.target.value;
+    const { state, setState, setGeneratedLink } = props;
+    const handleChange = (e) => {
+      const value = e.target.value;
       setState({
         ...state,
-        [evt.target.name]: value,
+        [e.target.name]: value,
       });
       setGeneratedLink(
         `https://twitter.com/i/notifications/anniversary?title=${encodeURIComponent(
@@ -109,4 +108,4 @@ const Forms = (props) => {
   });
 };
 
-export default TwtAnniv;
+export default Twitterversary;

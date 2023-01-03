@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./index.css";
 import Home from "./pages/home/home";
-import TwtAnniv from "./pages/twt-anniv-gen/twt-anniv";
+import Twitterversary from "./pages/twitterversary/twitterversary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,10 +12,13 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="twt-anniv" element={<TwtAnniv />} />
+        <Route path="twitterversary" element={<Twitterversary />} />
       </Routes>
       <footer>
-        Copyright © 2022{" "} <Link to="/"><span>Luis Escarrilla</span></Link>
+        Copyright © 2022{" "}
+        <Link to="/">
+          <span>Luis Escarrilla</span>
+        </Link>
         . All Rights Reserved. This website doesn't use cookies.
       </footer>
     </BrowserRouter>
